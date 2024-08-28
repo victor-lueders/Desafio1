@@ -49,12 +49,15 @@ namespace Desafio1
             Console.WriteLine();
             foreach(var produto in Produtos)
             {
-                Console.WriteLine($"{produto.Quantidade} {produto.Produto.Descricao} - Preço unitário: R${produto.Produto.Valor}");
+                Console.WriteLine($"{produto.Quantidade} {produto.Produto.Descricao} - Preço unitário R${produto.Produto.Valor}");
             }
             Console.WriteLine();
             Console.WriteLine("O valor total é R$" + ValorTotal);
             Console.WriteLine("Forma de pagamento: " + Pagamento.Descricao);
-            Console.WriteLine($"Sua pontuacao é {Cliente.Pontuacao}. Restam {10 - Cliente.Pontuacao} para uma refeição livre.");
+            if(Cliente != null)
+                Console.WriteLine($"Sua pontuacao é {Cliente.Pontuacao}. Restam {10 - Cliente.Pontuacao} para uma refeição livre.");
+            else
+                Console.WriteLine("Cadastre-se para ter direito a uma refeição livre a cada 10 compras!!!");
         }
     }
 }

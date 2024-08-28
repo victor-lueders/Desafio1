@@ -46,32 +46,23 @@
             try
             {
                 var itens = new List<ProdutoVenda>();
-                var cliente = clientes.Consultar("12312312312");
+                /*var cliente = clientes.Consultar("12312312312");
                 itens.Add(new ProdutoVenda(produtos.Consultar(0), 2));
                 itens.Add(new ProdutoVenda(produtos.Consultar(1), 1));
                 itens.Add(new ProdutoVenda(produtos.Consultar(2), 1));
 
                 compras.Add(new Compra(cliente, new FormaPagamento("Cartão crédito"), itens));
                 cliente.AddPontuacao(1);
-                clientes.Alterar(cliente);
+                clientes.Alterar(cliente);*/
 
                 itens.Clear();
                 itens.Add(new ProdutoVenda(produtos.Consultar(0), 2));
                 itens.Add(new ProdutoVenda(produtos.Consultar(1), 1));
                 itens.Add(new ProdutoVenda(produtos.Consultar(2), 1));
 
-                compras.Add(new Compra(cliente, new FormaPagamento("Cartão crédito"), itens));
-                cliente.AddPontuacao(1);
-                clientes.Alterar(cliente);
+                compras.Add(new Compra(new FormaPagamento("Cartão crédito"), itens));
 
-                itens.Clear();
-                itens.Add(new ProdutoVenda(produtos.Consultar(0), 2));
-                itens.Add(new ProdutoVenda(produtos.Consultar(1), 1));
-                itens.Add(new ProdutoVenda(produtos.Consultar(2), 1));
 
-                compras.Add(new Compra(cliente, new FormaPagamento("Cartão crédito"), itens));
-                cliente.AddPontuacao(1);
-                clientes.Alterar(cliente);
 
                 compras.Consultar(0).Imprimir();
 
