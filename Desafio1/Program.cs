@@ -25,7 +25,7 @@
                 else
                 {
                     Console.WriteLine("Ocorreu um erro");
-                    Console.WriteLine(ex);
+                    throw new ArgumentException("Ocorreu um erro ao popular clientes");
                 }
             }
 
@@ -39,7 +39,7 @@
             catch (Exception ex)
             {
                 Console.WriteLine("Ocorreu um erro.");
-                throw ex;
+                throw new ArgumentException("Ocorreu um erro ao popular produtos");
             }
 
             //Popular compras
@@ -67,9 +67,9 @@
                 compras.Consultar(0).Imprimir();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine("deu bosta");
+                throw new ArgumentException("Ocorreu um erro ao realizar a compra");
             }
         }
     }
