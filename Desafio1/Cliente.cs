@@ -8,6 +8,7 @@ namespace Desafio1
 {
     internal class Cliente : Pessoa
     {
+        public int Id { get; set; }
         public int Pontuacao { get; set; }
 
         public Cliente() { }

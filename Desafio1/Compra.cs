@@ -10,15 +10,15 @@ namespace Desafio1
     {
         public int Id { get; set; }
         public IEnumerable<ProdutoVenda> Produtos { get; set; }
-
+        public int ClienteId { get; set; }
         public Cliente Cliente { get; set; }
 
-        public FormaPagamento Pagamento { get; set; }
+        public string Pagamento { get; set; }
         public double ValorTotal { get; set; }
 
         public Compra() { }
 
-        public Compra(Cliente cliente, FormaPagamento pagamento, IEnumerable<ProdutoVenda> produtos)
+        public Compra(Cliente cliente, string pagamento, IEnumerable<ProdutoVenda> produtos)
         {
             this.Cliente = cliente;
             this.Pagamento = pagamento;
@@ -31,7 +31,7 @@ namespace Desafio1
             }
         }
 
-        public Compra(FormaPagamento pagamento, IEnumerable<ProdutoVenda> produtos)
+        public Compra(string pagamento, IEnumerable<ProdutoVenda> produtos)
         {
             this.Pagamento = pagamento;
             this.Produtos = produtos;
@@ -53,7 +53,7 @@ namespace Desafio1
             }
             Console.WriteLine();
             Console.WriteLine("O valor total é R$" + ValorTotal);
-            Console.WriteLine("Forma de pagamento: " + Pagamento.Descricao);
+            Console.WriteLine("Forma de pagamento: " + Pagamento);
             if(Cliente != null)
                 Console.WriteLine($"Sua pontuacao é {Cliente.Pontuacao}. Restam {10 - Cliente.Pontuacao} para uma refeição livre.");
             else

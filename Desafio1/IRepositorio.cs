@@ -8,11 +8,11 @@ namespace Desafio1
 {
     internal interface IRepositorio<T, t>
     {
-        T Add(T item);
-        T Alterar(T item);
-        T Consultar(t id);
-        IEnumerable<T> Consultar();
-        bool Remover(T item);
+        IEnumerable<T> GetAll();
+        T Get(t id);
+        T Save(T entity);
+        bool Update(T entity);
+        void Delete(T entity);
 
     }
 }
