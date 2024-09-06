@@ -19,5 +19,7 @@ namespace Desafio1
             this.Produto = produto;
             this.Quantidade = quantidade;
         }
+
+        public ProdutoVenda() { }
     }
 }

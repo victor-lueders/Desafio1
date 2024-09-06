@@ -53,7 +53,7 @@ namespace Desafio1
                             ClienteId = reader.GetInt32(reader.GetOrdinal("ClienteId")),
                             ValorTotal = reader.GetDouble(reader.GetOrdinal("ValorTotal")),
                             Pagamento = reader.GetString(reader.GetOrdinal("Pagamento")),
-                            Produtos = repositorioProduto                            
+                            Produtos = repositorioProduto
                         };
                     }
                 }
@@ -124,7 +124,6 @@ namespace Desafio1
             using (SqlConnection conn = new SqlConnection(connectionString))
             using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
             {
-                cmd.Parameters.AddWithValue("@ClienteId", entity.ClienteId);
                 cmd.Parameters.AddWithValue("@Pagamento", entity.Pagamento);
                 cmd.Parameters.AddWithValue("@ValorTotal", entity.ValorTotal);
                 cmd.Parameters.AddWithValue("@Id", entity.Id);
