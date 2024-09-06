@@ -9,7 +9,7 @@ namespace Desafio1
 {
     internal class RepositorioCompra : IRepositorio<Compra, int>
     {
-        RepositorioProduto repositorioProduto = new RepositorioProduto();
+        RepositorioProdutoVenda repositorioProdutos = new RepositorioProdutoVenda();
         List<Compra> compraList = new List<Compra>();
         Compra compra = null;
 
@@ -53,7 +53,7 @@ namespace Desafio1
                             ClienteId = reader.GetInt32(reader.GetOrdinal("ClienteId")),
                             ValorTotal = reader.GetDouble(reader.GetOrdinal("ValorTotal")),
                             Pagamento = reader.GetString(reader.GetOrdinal("Pagamento")),
-                            Produtos = repositorioProduto
+                            Produtos = repositorioProdutos.GetByCompra(id)
                         };
                     }
                 }

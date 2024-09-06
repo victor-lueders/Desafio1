@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Desafio1
 {
-    internal class RepositorioProdutoVendaVenda : IRepositorio<ProdutoVenda, int>
+    internal class RepositorioProdutoVenda : IRepositorio<ProdutoVenda, int>
     {
         List<ProdutoVenda> produtos = new List<ProdutoVenda>();
         RepositorioProduto repositorioProduto = new RepositorioProduto();
